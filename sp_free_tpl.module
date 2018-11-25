@@ -1,0 +1,34 @@
+<?php
+
+
+/**
+ * Implements hook_library_info_build().
+ */
+function sp_free_tpl_library_info_build() {
+  $return_libraries = [];
+  $plugin_service = \Drupal::service('plugin.manager.sp_free_tpl');
+  $plugin_definitions = $plugin_service->getDefinitions();
+  // Adds libraries from tpl plugins
+  foreach ($plugin_definitions AS $pd_key => $pd_value) {
+    $plugin_instance = $plugin_service->createInstance($pd_key);
+    $return_libraries += $plugin_instance->getLibraries();
+  }
+
+  return $return_libraries;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function sp_free_tpl_theme($existing, $type, $theme, $path) {
+  $return_theme = [];
+  $plugin_service = \Drupal::service('plugin.manager.sp_free_tpl');
+  $plugin_definitions = $plugin_service->getDefinitions();
+  // Adds templates from tpl plugins
+  foreach ($plugin_definitions AS $pd_key => $pd_value) {
+    $plugin_instance = $plugin_service->createInstance($pd_key);
+    $return_theme += $plugin_instance->getTemplates();
+  }
+
+  return $return_theme;
+}

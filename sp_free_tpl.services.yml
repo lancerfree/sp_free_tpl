@@ -1,0 +1,13 @@
+services:
+  plugin.manager.sp_free_tpl:
+    class: Drupal\sp_free_tpl\Plugin\TplManager
+    parent: default_plugin_manager
+  sp_free_tpl.route_subscriber:
+    class: Drupal\sp_free_tpl\Routing\TplRouteSubscriber
+    tags:
+      - { name: event_subscriber }
+  sp_free_tpl.default_negotiator:
+    class: Drupal\sp_free_tpl\Theme\TplDefaultNegotiator
+    arguments: ['@path.matcher']
+    tags:
+      - { name: theme_negotiator, priority: -40 }
