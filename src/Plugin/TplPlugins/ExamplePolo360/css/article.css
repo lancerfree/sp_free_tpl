@@ -1,0 +1,62 @@
+.article {
+  display: inline-block;
+  width: 300px;
+}
+.article__title {
+  display: block;
+  width: 300px;
+  color: #11719e;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+  font-size: 21px;
+  padding: 0 4px;
+  line-height: 95%;
+}
+.article__description {
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  font-size: 12px;
+  color: #8c8c8c;
+  padding: 0 2px;
+}
+.article__image-wrap {
+  display: block;
+}
+.article img {
+  width: 300px;
+  height: 192px;
+  padding: 7px;
+  background-color: #f3f3f3;
+  border: 1px solid #e1e1e1;
+}
+.article__image-shadow-top {
+  width: 300px;
+  height: 10px;
+  background: url(../img/image-top-shadow.png) bottom left no-repeat;
+}
+.article__image-shadow-bottom {
+  width: 300px;
+  background: url(../img/image-bottom-shadow.png) top left no-repeat;
+  height: 5px;
+}
+.article__body {
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  font-size: 13px;
+  color: #3e3e3e;
+  padding: 6px;
+  min-height: 105px;
+}
+.article__learn-more {
+  display: block;
+  color: #016999;
+  font-size: 12px;
+  font: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+  background: url(../img/learn-more.png) no-repeat left top;
+  width: 163px;
+  height: 40px;
+  padding-top: 13px;
+  padding-left: 13px;
+  margin: 10px 6px;
+}
+.article.odd {
+  margin: 0 16px;
+}

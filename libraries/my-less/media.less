@@ -1,0 +1,84 @@
+
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@screen : ~"only screen" ;
+@lg-minus : ~" (max-width : 1200px)";
+@md-minus : ~" (max-width : 992px)";
+@sm-minus : ~" (max-width : 768px)";
+@xs-minus : ~" (max-width : 480px) ";
+@lg-plus : ~" (min-width : 1200px)";
+@md-plus : ~" (min-width : 992px)";
+@sm-plus : ~" (min-width : 768px)";
+@xs-plus : ~" (min-width : 480px) ";
+
+
+.element-minus(@default,@xs,@sm,@md,@lg)
+{
+  @default();
+  @media @screen and @lg-minus {
+    @lg();
+  }
+
+  @media @screen and @md-minus {
+    @md();
+  }
+
+  @media @screen and @sm-minus {
+    @sm();
+  }
+
+  @media @screen and @xs-minus {
+    @xs();
+  }
+
+}
+
+
+.element-plus(@default,@xs,@sm,@md,@lg)
+{
+  @default();
+  @media @screen and @xs-minus {
+    @xs();
+  }
+
+
+  @media @screen and @sm-minus {
+    @sm();
+  }
+
+  @media @screen and @md-minus {
+    @md();
+  }
+  @media @screen and @lg-minus {
+    @lg();
+  }
+
+}
+
+.property(@property-name,@property-value)when not(@property-value = 0){
+  @{property-name}:@property-value;
+}
+.property(@property-name,@property-value)when(@property-value = 0){
+
+}
+.property-minus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value) {
+  .element-minus(
+  {.property(@property-name , @default-value)},
+  {.property(@property-name , @xs-value)},
+  {.property(@property-name , @sm-value)},
+  {.property(@property-name , @md-value)},
+  {.property(@property-name , @lg-value)}
+  );
+}
+
+.property-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value) {
+  .element-plus(
+  {.property(@property-name , @default-value)},
+  {.property(@property-name , @xs-value)},
+  {.property(@property-name , @sm-value)},
+  {.property(@property-name , @md-value)},
+  {.property(@property-name , @lg-value)}
+  );
+}

@@ -1,0 +1,53 @@
+.slide-show {
+  z-index: 3;
+}
+.carousel {
+  width: 940px;
+  display: block;
+  margin: 0 0 64px 0;
+  padding-top: 24px;
+  height: 427px;
+}
+.carousel-inner {
+  padding-bottom: 10px;
+}
+.carousel-inner .item {
+  border-top: 1px solid #c6c6c6;
+  border-left: 1px solid #c6c6c6;
+  border-right: 1px solid #c6c6c6;
+}
+.carousel-caption {
+  bottom: -64px;
+  left: 10px;
+  z-index: 10;
+  width: 940px;
+  height: 63px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Georgia", Times New Roman, Times, serif;
+  color: black;
+  text-shadow: none;
+}
+#indicators {
+  left: 70px;
+  bottom: 53px;
+}
+#indicators li {
+  background-color: #fdfdfd;
+  border: 3px solid #252525;
+  border-radius: 15px;
+  padding: 0;
+  margin: 1px;
+  width: 15px;
+  height: 15px;
+}
+#indicators li.active {
+  background-color: #84d9f3;
+  border: 3px solid #252525;
+}
+.inserted-for-shadow {
+  width: 940px;
+  height: 10px;
+  background: url(../img/slide-show-shadow.png) no-repeat bottom left;
+  margin-bottom: 56px;
+}

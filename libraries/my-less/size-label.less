@@ -1,0 +1,28 @@
+//@import (reference) "element.less";
+
+.size-label {
+  &:after {
+    position: fixed;
+    top: 3px;
+    left: 3px;
+   z-index: 1000;
+    box-sizing: content-box;
+
+    padding: 5px;
+    border: dashed 1px skyblue;
+    width: 30px;
+    height: 20px;
+    overflow: hidden;
+    font-size: 20px;
+    line-height: 20px;
+
+    .element-minus(
+      /*df*/  {content: "df";background: white; color: purple;},
+      /*xs*/  {content: "xs";background: yellow;color: green; },
+      /*sm*/  {content: "sm";background: black;color: red; },
+      /*md*/  {content: "md";background: red;color: black; },
+      /*lg*/  {content: "lg";background: green;color: yellow; }
+     )
+
+  }
+}

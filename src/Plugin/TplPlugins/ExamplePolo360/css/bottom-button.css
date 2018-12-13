@@ -1,0 +1,19 @@
+.bottom-button {
+  display: block;
+  margin: 13px 8px;
+  border: none;
+  background: transparent url('../img/button-blue.png') !important;
+  width: 163px;
+  height: 32px;
+  padding-top: 9px;
+  padding-left: 9px;
+  color: #f7fafb;
+  text-align: left;
+  font-family: "Georgia", Times New Roman, Times, serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+.bottom-button:hover {
+  text-decoration: underline;
+  color: #f7fafb;
+}

@@ -1,0 +1,15 @@
+.contact-region {
+  vertical-align: top;
+  display: table;
+  position: relative;
+}
+.contact-region .col {
+  vertical-align: top;
+  height: 340px;
+  width: 310px;
+  margin-right: 3px;
+}
+.contact-region .bottom-button {
+  position: absolute;
+  bottom: 10px;
+}

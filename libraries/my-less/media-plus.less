@@ -1,0 +1,183 @@
+@import (reference) "media-vars.less";
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when  (@xs-value = 0)and  (@sm-value = 0) and  (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when  (@xs-value = 0)and  (@sm-value = 0) and not (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when  (@xs-value = 0)and not (@sm-value = 0) and not (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and not (@sm-value = 0) and not (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and not (@sm-value = 0) and not (@md-value = 0) and  (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+}
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and not (@sm-value = 0) and  (@md-value = 0) and  (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+}
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and  (@sm-value = 0) and (@md-value = 0) and (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+}
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and  (@sm-value = 0) and not (@md-value = 0) and  (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+}
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when (@xs-value = 0)and not (@sm-value = 0) and  (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when (@xs-value = 0)and not (@sm-value = 0) and not (@md-value = 0) and  (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+}
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and  (@sm-value = 0) and  (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and  (@sm-value = 0) and not (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when not (@xs-value = 0)and not (@sm-value = 0) and  (@md-value = 0) and not (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @xs-plus {
+    @{property-name} : @xs-value;
+  }
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+  @media @screen and @lg-plus {
+    @{property-name} : @lg-value;
+  }
+}
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when  (@xs-value = 0)and not (@sm-value = 0) and  (@md-value = 0) and (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @sm-plus {
+    @{property-name} : @sm-value;
+  }
+}
+
+
+
+.media-plus(@property-name,@default-value,@xs-value,@sm-value,@md-value,@lg-value)
+when  (@xs-value = 0)and  (@sm-value = 0) and not (@md-value = 0) and  (@lg-value = 0) {
+  @{property-name} : @default-value;
+  @media @screen and @md-plus {
+    @{property-name} : @md-value;
+  }
+}

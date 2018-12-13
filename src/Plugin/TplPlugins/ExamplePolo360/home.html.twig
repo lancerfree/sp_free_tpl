@@ -1,0 +1,39 @@
+{%
+  set ASSETS = pdir(_self.templateName,1)
+%}
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <title>Polo360</title>
+    <?php   tpl('point','ico'); ?>
+    <?php tpl('point/metas',array('ie_compatible','utf8','tel_no')); ?>
+    <script src="/{{ libraries_path }}/jquery/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet"  href="/{{ libraries_path }}/bootstrap/css/bootstrap.min.css">
+
+    <script src="/{{ libraries_path }}/bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/article.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/block-news.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/block-send-me.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/block-social.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/footer.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/header.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/newsletter-block.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/polo360.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/slide-show.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/bottom-button.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/input-text.css">
+    <link rel="stylesheet"  href="/{{ ASSETS }}/css/contact-region.css">
+</head>
+<body>
+    <div id="main-wrapper">
+        {% include 'header.html.twig' %}
+        {% include 'slide-show.html.twig' %}
+        {% include 'articles.html.twig' %}
+        {% include 'contacts.html.twig' %}
+        {% include 'footer.html.twig' %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+@import (reference) "media-vars.less";
+
+
+
+.element-minus(@default,@xs,@sm,@md,@lg)
+{
+@default();
+@media @screen and @lg-minus {
+  @lg();
+}
+
+@media @screen and @md-minus {
+  @md();
+}
+
+@media @screen and @sm-minus {
+  @sm();
+}
+
+@media @screen and @xs-minus {
+  @xs();
+}
+
+}
+
+
+.element-plus(@default,@xs,@sm,@md,@lg)
+{
+  @default();
+  @media @screen and @xs-minus {
+    @xs();
+  }
+
+
+  @media @screen and @sm-minus {
+    @sm();
+  }
+
+  @media @screen and @md-minus {
+    @md();
+  }
+  @media @screen and @lg-minus {
+    @lg();
+  }
+
+}

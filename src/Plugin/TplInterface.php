@@ -12,7 +12,7 @@ use Drupal\Component\Plugin\PluginInspectionInterface;
 interface TplInterface extends PluginInspectionInterface {
 
   /**
-   * Return id of the.
+   * Returns id of the.
    *
    * @param string
    *   Id plugin.
@@ -20,7 +20,7 @@ interface TplInterface extends PluginInspectionInterface {
   public function getId();
 
   /**
-   *  Return templates that will be used.
+   *  Returns templates that will be used.
    *
    * @param array
    *   Settings for theme - templates twig.
@@ -36,7 +36,7 @@ interface TplInterface extends PluginInspectionInterface {
   public function routeInfo();
 
   /**
-   *  Return theme name for render.
+   *  Returns theme name for render.
    *
    * @param array
    *   Theme name for processing request.
@@ -44,11 +44,27 @@ interface TplInterface extends PluginInspectionInterface {
   public function themeInfo();
 
   /**
-   *  Return array with styles and scripts.
+   *  Returns array with styles and scripts.
    *
    * @param array
    *   Library list.
    */
   public function libraryInfo();
+
+  /**
+   *  Returns array with suggestions for html and page template.
+   *
+   * @param array
+   *   Suggestion list.
+   *
+   */
+  public function layoutSuggestionsInfo();
+
+  /**
+   * Do clean output styles and scripts or don't?.
+   *
+   * @param bool
+   */
+  public function cleanAttachmentsInfo();
 
 }

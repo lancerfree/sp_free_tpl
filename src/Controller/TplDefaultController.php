@@ -37,6 +37,7 @@ class TplDefaultController extends ControllerBase {
     $param_name = ''
   ) {
     $plugin_instance = $this->plugin_service->createInstance($sp_free_tpl_plugin_id);
+    sp_free_tpl_tmp_set('current_plugin',$plugin_instance);
     $content = $plugin_instance->$method_name($param_name);
     return $content;
   }

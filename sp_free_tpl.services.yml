@@ -11,3 +11,7 @@ services:
     arguments: ['@path.matcher']
     tags:
       - { name: theme_negotiator, priority: -40 }
+  sp_free_tpl.pdir:
+    class: Drupal\sp_free_tpl\Twig\Extension\PathTwigExtension
+    tags:
+      - { name: twig.extension }

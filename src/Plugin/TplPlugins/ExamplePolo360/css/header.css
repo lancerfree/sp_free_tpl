@@ -1,0 +1,41 @@
+.header {
+  height: 137px;
+}
+.logo {
+  position: absolute;
+  top: 37px;
+  left: 15px;
+}
+.block-menu-from-bd {
+  position: absolute;
+  top: 57px;
+  right: 0;
+}
+.main-menu {
+  padding: 0;
+  margin: 0;
+}
+.main-menu__item {
+  list-style: none;
+  display: inline-block;
+  border-left: 1px dotted #b7b7b7;
+}
+.main-menu__item a {
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #666666;
+  display: block;
+  text-decoration: none;
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+.main-menu__item a:hover {
+  text-decoration: underline;
+}
+.main-menu__item span {
+  font-size: 11px;
+  display: block;
+  font-family: Tahoma, Geneva, sans-serif;
+  color: #b7b7b7;
+  margin: 0 10px;
+}

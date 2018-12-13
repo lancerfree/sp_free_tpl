@@ -32,3 +32,85 @@ function sp_free_tpl_theme($existing, $type, $theme, $path) {
 
   return $return_theme;
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function sp_free_tpl_theme_suggestions_html_alter(array &$suggestions, array $variables) {
+  $plugin = sp_free_tpl_tmp_get('current_plugin');
+  if (empty($plugin)) {
+    return;
+  }
+  $suggested_arr = $plugin->layoutSuggestionsInfo();
+  if (!empty($suggested_arr['html'])) {
+    $suggestions[] = $suggested_arr['html'];
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function sp_free_tpl_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $plugin = sp_free_tpl_tmp_get('current_plugin');
+  if (empty($plugin)) {
+    return;
+  }
+  $suggested_arr = $plugin->layoutSuggestionsInfo();
+  if (!empty($suggested_arr['page'])) {
+    $suggestions[] = $suggested_arr['page'];
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function sp_free_tpl_page_attachments_alter(array &$attachments) {
+  $plugin = sp_free_tpl_tmp_get('current_plugin');
+  if (empty($plugin)) {
+    return;
+  }
+  $clean_info = $plugin->cleanAttachmentsInfo();
+  if (!$clean_info) {
+    return;
+  }
+  $pl_libraries = $plugin->getLibraries();
+  foreach ($pl_libraries AS $lib_name => $lib_info) {
+    $full_name_lib = 'sp_free_tpl/' . $lib_name;
+    $lib_name_map[$full_name_lib] = $lib_name;
+  }
+  if (empty($attachments["#attached"]["library"])) {
+    return;
+  }
+  foreach ($attachments["#attached"]["library"] AS $al_key => $al_value) {
+    if (empty($lib_name_map[$al_value])) {
+      // Remove other libraries.
+      unset($attachments["#attached"]["library"][$al_key]);
+    }
+  }
+}
+
+/**
+ * Setter for global array.
+ *
+ * @param $key
+ *   Key for set value.
+ * @param $value
+ *   Value for save.
+ */
+function sp_free_tpl_tmp_set($key, $value) {
+  $GLOBALS['sp_free_tpl'][$key] = $value;
+}
+
+/**
+ * Getter for data in the global array.
+ *
+ * @param string $key
+ *   Key for get data.
+ *
+ * @return mixed
+ */
+function sp_free_tpl_tmp_get($key) {
+  if (isset($GLOBALS['sp_free_tpl'][$key])) {
+    return $GLOBALS['sp_free_tpl'][$key];
+  }
+}

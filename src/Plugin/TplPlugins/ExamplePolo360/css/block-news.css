@@ -1,0 +1,32 @@
+.block-news__title {
+  font-family: "Georgia", Times New Roman, Times, serif;
+  font-size: 18px;
+  color: #444444;
+  border-bottom: dashed 1px #d3d3d3;
+  width: 300px;
+  padding: 6px;
+}
+.block-news__item {
+  width: 300px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #d3d3d3;
+}
+.block-news__item img {
+  width: 58px;
+  height: 58px;
+  padding: 4px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  -webkit-box-shadow: 1px 1px 5px 0px #616061;
+  -moz-box-shadow: 1px 1px 5px 0px #616061;
+  box-shadow: 1px 1px 5px 0px #616061;
+  float: left;
+  margin: 0 6px;
+}
+.block-news__item span {
+  color: #444444;
+  font-family: helvetica, sans-serif;
+  font-size: 12px;
+}
